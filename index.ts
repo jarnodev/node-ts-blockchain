@@ -6,7 +6,7 @@ class Transaction {
     public amount: number,
     public payer: string, // public key
     public payee: string // public key
-  ) {}
+  ) { }
 
   toString() {
     return JSON.stringify(this);
@@ -21,7 +21,7 @@ class Block {
     public prevHash: string,
     public transaction: Transaction,
     public ts = Date.now()
-  ) {}
+  ) { }
 
   get hash() {
     const str = JSON.stringify(this);
@@ -53,7 +53,7 @@ class Chain {
   // Proof of work system
   mine(nonce: number) {
     let solution = 1;
-    console.log("⛏️  mining...");
+    console.log("mining...");
 
     while (true) {
       const hash = crypto.createHash("MD5");
